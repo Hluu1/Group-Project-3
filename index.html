@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+ 
+  <title>Reported UFO sightings</title>
+  
+  <script src="anime.min.js"></script>
+  <style>
+    #spaceship {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      var spaceship = document.getElementById('spaceship');
+      var containerWidth = window.innerWidth - spaceship.clientWidth;
+      var containerHeight = window.innerHeight - spaceship.clientHeight;
+
+      var animation = anime({
+        targets: spaceship,
+        translateX: [
+          { value: 0, duration: 500 },
+          { value: containerWidth, duration: 1000 },
+          { value: 0, duration: 1000 }
+        ],
+        translateY: [
+          { value: 0, duration: 500 },
+          { value: containerHeight, duration: 1000, delay: 500 },
+          { value: 0, duration: 1000 }
+        ],
+        loop: true,
+        easing: 'easeInOutQuad'
+      });
+    });
+  </script>
+</head>
+<body>
+  <img id="spaceship" src="spaceship.png" alt="Spaceship">
+</body>
+</html>
+
+
+
