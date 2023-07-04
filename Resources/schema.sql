@@ -1,11 +1,13 @@
-DROP TABLE ufo;
+DROP TABLE cleaned_ufo_au;
 
-CREATE TABLE ufo (
-	datetime TIMESTAMP WITHOUT TIME ZONE
+CREATE TABLE cleaned_ufo_au 
+(
+	country VARCHAR(30)
+	, state VARCHAR(50)
 	, city TEXT
-	, state VARCHAR(30)
-	, country VARCHAR(30)
 	, shape VARCHAR(30)
+	, duration_hours FLOAT	
+	, duration_minutes FLOAT
 	, duration_seconds FLOAT
 	, comments TEXT
 	, date_posted DATE
@@ -13,35 +15,37 @@ CREATE TABLE ufo (
 	, longitude FLOAT
 	, date DATE
 	, time TIME
-	, duration_minutes FLOAT
-	, duration_hours FLOAT	
 );
+--Confirm Data was imported correctly--
+SELECT * FROM cleaned_ufo_au;
 
-SELECT * FROM ufo;
 
+--Total Sightings per State--
 SELECT 
 	"state"
 	, "country"
 	, count("state") as "Total Sightings"
-FROM ufo
+FROM cleaned_ufo_au 
 GROUP BY ("state", "country")
 ORDER BY "Total Sightings" DESC;
 
+--Create Table Total Sightings per State--
 CREATE TABLE total_sightings AS 
-WITH country AS(
+WITH australia_sightings AS(
 SELECT 
 	"state"
 	, "country"
-	--, "city"
 	, count("state") as "Total Sightings"
-FROM ufo
-WHERE "country" ilike 'au'
+FROM cleaned_ufo_au 
 GROUP BY ("state", "country")
 ORDER BY "Total Sightings" DESC
 	)
-SELECT * FROM country	
+SELECT * FROM australia_sightings	
 	;
 
-select * from total_sightings;
+--Confirm Table was created correctly--
+SELECT * FROM total_sightings;
+
+
 
 
