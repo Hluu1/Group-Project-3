@@ -42,6 +42,7 @@ charts.js
 Leaflet
 
 **References**
+
 https://www.kaggle.com/datasets/NUFORC/ufo-sightings
 https://animejs.com/documentation/#direction
 https://developers.google.com/chart/interactive/docs/gallery/barchart
@@ -51,7 +52,10 @@ https://developers.google.com/maps/documentation/javascript/heatmaplayer
 
 ## Authors
 Luz - https://github.com/
+
 Kirsty - https://github.com/kirsty185
+
 Trong - https://github.com/
+
 Stephen - https://github.com/
 
