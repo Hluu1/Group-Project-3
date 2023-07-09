@@ -31,29 +31,23 @@ Population | Australian Bureau of Statistics (abs.gov.au)
 
 ### Built With
 Python
-
 Jupyter Notebook
-
 Pandas
-
 Numpy
-
 HTML
-
 Pathlib, bokeh
-
 Postgres
-
 Javascript library - Anime.js 
-
 charts.js
-
 Leaflet
 
-**Resources**
+**References**
+https://www.kaggle.com/datasets/NUFORC/ufo-sightings
+https://animejs.com/documentation/#direction
+https://developers.google.com/chart/interactive/docs/gallery/barchart
+https://stackoverflow.com/questions/55214348/include-bokeh-tooltips-in-stacked-bar-chart
+https://developers.google.com/maps/documentation/javascript/heatmaplayer
 
-Documentation 
-| anime.js (animejs.com)
 
 ## Authors
 Luz - https://github.com/
