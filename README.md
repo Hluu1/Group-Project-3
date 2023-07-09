@@ -7,6 +7,7 @@ The page explores Australian sightings of UFOs and provides a heatmap of aggrega
 
 **Deployment of site**
 Landing page is deployed via https://Hluu1.github.io/Group-Project-3
+
 Interact with this page by clicking on the maps and charts to find out more about UFO sightings in Australia between 1960 and 2014.
 
 ## Getting Started
