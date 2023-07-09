@@ -51,8 +51,11 @@ charts.js
 Leaflet
 
 **Resources**
-Documentation | anime.js (animejs.com)
-Authors
+
+Documentation 
+| anime.js (animejs.com)
+
+## Authors
 Luz - https://github.com/
 Kirsty - https://github.com/kirsty185
 Trong - https://github.com/
