@@ -1,0 +1,112 @@
+state,shape,count
+Australian Capital Territory,changing,1
+Australian Capital Territory,cigar,1
+Australian Capital Territory,circle,4
+Australian Capital Territory,cone,1
+Australian Capital Territory,diamond,2
+Australian Capital Territory,disk,2
+Australian Capital Territory,formation,2
+Australian Capital Territory,light,2
+Australian Capital Territory,teardrop,1
+Australian Capital Territory,triangle,2
+New South Wales,changing,5
+New South Wales,cigar,8
+New South Wales,circle,17
+New South Wales,cone,2
+New South Wales,cross,1
+New South Wales,cylinder,2
+New South Wales,diamond,4
+New South Wales,disk,15
+New South Wales,egg,7
+New South Wales,fireball,9
+New South Wales,flash,1
+New South Wales,formation,4
+New South Wales,light,40
+New South Wales,other,10
+New South Wales,oval,10
+New South Wales,rectangle,5
+New South Wales,sphere,3
+New South Wales,teardrop,1
+New South Wales,triangle,13
+New South Wales,unknown,8
+Northern Territory,chevron,1
+Northern Territory,disk,1
+Northern Territory,fireball,1
+Northern Territory,light,1
+Northern Territory,other,3
+Northern Territory,unknown,2
+Queensland,changing,2
+Queensland,cigar,1
+Queensland,circle,15
+Queensland,cylinder,4
+Queensland,diamond,1
+Queensland,disk,10
+Queensland,egg,3
+Queensland,fireball,10
+Queensland,flash,1
+Queensland,formation,4
+Queensland,light,17
+Queensland,other,10
+Queensland,oval,7
+Queensland,rectangle,3
+Queensland,sphere,3
+Queensland,teardrop,3
+Queensland,triangle,6
+Queensland,unknown,3
+South Australia,cigar,1
+South Australia,circle,7
+South Australia,cylinder,2
+South Australia,diamond,1
+South Australia,disk,6
+South Australia,fireball,4
+South Australia,formation,5
+South Australia,light,16
+South Australia,other,2
+South Australia,oval,2
+South Australia,rectangle,2
+South Australia,sphere,2
+South Australia,teardrop,2
+South Australia,triangle,4
+South Australia,unknown,2
+Tasmania,circle,2
+Tasmania,cross,2
+Tasmania,cylinder,1
+Tasmania,formation,1
+Tasmania,light,2
+Tasmania,other,2
+Tasmania,oval,2
+Victoria,changing,1
+Victoria,chevron,2
+Victoria,cigar,5
+Victoria,circle,15
+Victoria,cone,2
+Victoria,cylinder,1
+Victoria,diamond,3
+Victoria,disk,18
+Victoria,egg,1
+Victoria,fireball,6
+Victoria,formation,3
+Victoria,light,27
+Victoria,other,11
+Victoria,oval,8
+Victoria,sphere,3
+Victoria,teardrop,2
+Victoria,triangle,15
+Victoria,unknown,7
+Western Australia,changing,1
+Western Australia,cigar,2
+Western Australia,circle,8
+Western Australia,cone,3
+Western Australia,disk,10
+Western Australia,egg,1
+Western Australia,fireball,6
+Western Australia,flash,2
+Western Australia,formation,1
+Western Australia,light,18
+Western Australia,other,5
+Western Australia,oval,3
+Western Australia,rectangle,4
+Western Australia,sphere,5
+Western Australia,teardrop,1
+Western Australia,triangle,7
+Western Australia,unknown,5

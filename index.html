@@ -4,18 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
- 
-  <title>Reported UFO sightings</title>
-  
-  <script src="anime.min.js"></script>
-  <style>
-    #spaceship {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+<!-- CSS for page style and layout-->
+  <title>Reported UFO Sightings</title>
+  <style> 
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: left;
+    }
+
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+    
+    .container {
+      display: flex;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .image {
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .image img {
+      max-width: 100%;
     }
   </style>
+</head>
+<body>
+  <h1>Reported UFO Sightings in Australia</h1>
+  <hr />
+  <p>Welcome to the fascinating world of UFO sightings in Australia! Our project delves deep into the mysterious and captivating realm of unidentified flying objects, documenting and analysing reported sightings from across the country. Australia has a rich history of UFO encounters, and we invite you to join us on an extraordinary journey to uncover the truth behind these enigmatic phenomena. Through meticulous research, data analysis, and compelling visualisations, we aim to shed light on the unexplained, spark curiosity, and engage in thought-provoking discussions. Whether you're a believer, a skeptic, or simply curious about the unknown, our project provides a captivating exploration into the intriguing world of UFO sightings in Australia. Get ready to embark on an adventure that will challenge your perceptions and leave you pondering the mysteries of the skies above.</p>
+  <hr>
+  <h2>Visualisations</h2>
+  <ul>
+    <li><a href="heatmap.js">Interactive Map</a> - Explore an interactive heat map displaying UFO sightings across Australia.</li> <!-- Trong's heatmap to go here-->
+    <li><a href="total_sightings_state_year.html">Total Sightings as a proportion of total state population</a> - View a line graph showcasing the trends and patterns of UFO sightings.</li>
+    <li><a href="shape_chart.html">UFO Shape by State Chart</a> - Discover the distribution of UFO shapes reported across Australia.</li>
+    <li><a href="TOD.html">Sightings by Time of Day</a> - Discover what time of day a sighting of a UFO predominantly occurs.</li>
+  </ul>
+  <hr> <!-- container for the Spaceship image -->
+  <div class="container">
+    <div class="content">
+      <h2>Spaceship Animation</h2>
+      <img id="spaceship" src="spaceship.png" alt="Spaceship">
+    </div> <!-- container for the time of day observation line chart image, Luz to put word cloud png name here at src -->
+    <div class="image">
+      <img src="Time_of_day.png" alt="Sightings by Time of Day">
+    </div>
+  </div>
+<!-- Spaceship animation using anime.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', (event) => {
       var spaceship = document.getElementById('spaceship');
@@ -39,11 +87,5 @@
       });
     });
   </script>
-</head>
-<body>
-  <img id="spaceship" src="spaceship.png" alt="Spaceship">
 </body>
 </html>
-
-
-
