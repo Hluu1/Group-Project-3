@@ -31,15 +31,23 @@ Population | Australian Bureau of Statistics (abs.gov.au)
 
 ### Built With
 Python
+
 Jupyter Notebook
+
 Pandas
+
 Numpy
+
 HTML
+
 Pathlib, bokeh
+
 Postgres
+
 Javascript library - Anime.js 
-Folium
+
 charts.js
+
 Leaflet
 
 **Resources**
