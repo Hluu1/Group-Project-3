@@ -15,25 +15,21 @@ Follow the instructions will get you a copy of the project up and running on you
 
 # Prerequisites
 You will need to have the following software and dependencies installed on your machine:
+
 •	Python 3.x
 •	Postgres
 •	Jupyter Notebook
-Installation
+
+### Installation
 1.	Clone the repository to your local machine:
-git clone https://
 2.	Navigate to the project directory:
-cd UFO Sightings in Australia
-
-### Install the necessary dependencies:
-pip install 
-
-### Usage
-In the browser window that opens, navigate to the project directory and open the folder code.
+3.  Install the necessary dependencies and run each ipynb
 
 # Data sources
 UFO Sightings | Kaggle
 Population | Australian Bureau of Statistics (abs.gov.au)
-Built With
+
+### Built With
 Python
 Jupyter Notebook
 Pandas
