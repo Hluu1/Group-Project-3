@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Heatmap Example</title>
+  <title>Heatmap with Cluster Markers Example</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" />
   <style>
     body, html {
       height: 100%;
@@ -20,9 +22,10 @@
   <div id="map"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-  <script src="https://d3js.org/d3.v7.min.js"></script> <!-- Add this line for d3.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 
   <script>
     var myMap = L.map('map').setView([-27.47101, 153.024292], 6);
@@ -32,6 +35,12 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(myMap);
 
+    // Create a marker cluster group
+    var markers = L.markerClusterGroup();
+
+    // Create a heatmap layer
+    var heat = L.heatLayer([], { radius: 25 });
+
     // Load UFO coordinates from ufo_coordinates.csv
     fetch('./Resources/ufo_coordinates.csv')
       .then(response => response.text())
@@ -39,65 +48,28 @@
         // Parse CSV data using PapaParse
         var data = Papa.parse(csvString, { header: true }).data;
 
-        // Create heatmap data array
-        var heatmapData = [];
-
-        // Create markers array
-        var markers = [];
-
-        // For each row in data, create a marker and add it to the map
+        // For each row in data, create a marker and add it to the marker cluster group
         // For each row, columns `latitude` and `longitude` are required
         data.forEach(row => {
           var lat = parseFloat(row.latitude);
           var lon = parseFloat(row.longitude);
           if (!isNaN(lat) && !isNaN(lon)) {
-            heatmapData.push([lat, lon]);
-
             var marker = L.marker([lat, lon], {
               opacity: 1
-            }).bindPopup(row.Title);
+            }).bindPopup(`Latitude: ${lat}<br>Longitude: ${lon}`);
 
-            markers.push(marker);
+            markers.addLayer(marker);
+
+            heat.addLatLng([lat, lon]);
           } else {
             console.warn('Invalid latitude or longitude value:', row);
           }
         });
 
-        // Create heatmap layer if there are valid data points
-        if (heatmapData.length > 0) {
-          var heat = L.heatLayer(heatmapData).addTo(myMap);
-        }
-
-        // Toggle markers and heatmap based on checkbox state
-        var toggleMarkers = document.getElementById('toggleMarkers');
-        var toggleHeatmap = document.getElementById('toggleHeatmap');
-
-        toggleMarkers.addEventListener('change', function() {
-          if (toggleMarkers.checked) {
-            markers.forEach(marker => marker.addTo(myMap));
-          } else {
-            markers.forEach(marker => myMap.removeLayer(marker));
-          }
-        });
-
-        toggleHeatmap.addEventListener('change', function() {
-          if (toggleHeatmap.checked) {
-            heat.addTo(myMap);
-          } else {
-            myMap.removeLayer(heat);
-          }
-        });
+        // Add the marker cluster group and heatmap layer to the map
+        myMap.addLayer(markers);
+        myMap.addLayer(heat);
       });
   </script>
-
-  <!-- Add checkboxes for toggling markers and heatmap -->
-  <div>
-    <label>
-      <input type="checkbox" id="toggleMarkers" checked> Toggle Markers
-    </label>
-    <label>
-      <input type="checkbox" id="toggleHeatmap" checked> Toggle Heatmap
-    </label>
-  </div>
 </body>
 </html>
