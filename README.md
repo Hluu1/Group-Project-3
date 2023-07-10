@@ -30,16 +30,16 @@ UFO Sightings | Kaggle
 
 
 ### Built With
-Python
-Jupyter Notebook
-Pandas
-HTML
-Pathlib, bokeh
-Plotly
-Postgres
-Javascript Library - Anime.js
-charts.js
-Leaflet
+Python,
+Jupyter Notebook,
+Pandas,
+HTML,
+Pathlib, bokeh,
+Plotly,
+Postgres,
+Javascript Library - Anime.js,
+charts.js,
+Leaflet.
 
 
 # References
