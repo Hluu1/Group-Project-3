@@ -7,36 +7,55 @@
 <!-- CSS for page style and layout-->
   <title>Reported UFO Sightings</title>
   <style> 
+    body {
+      background-image: url("background_image.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
     h1 {
       text-align: center;
+      color: white;
+    }
+
+    p {
+      text-align: center;
+      color: white;
     }
 
     h2 {
       text-align: left;
+      color:white
     }
 
     ul {
       text-align: left;
       padding-left: 20px;
+      color:whitesmoke
     }
     
     .container {
       display: flex;
+      flex-wrap: wrap;
     }
 
     .content {
       flex: 1;
+      text-align: center;
     }
 
-    .image {
-      margin-left: 20px;
+    .content img#spaceship {
+      margin-left: 15px;
+      max-width: 200px;
+      height: auto;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
     }
 
-    .image img {
-      max-width: 100%;
+    .content img#wordcloud {
+      width: 100%;
     }
   </style>
 </head>
@@ -48,18 +67,19 @@
   <h2>Visualisations</h2>
   <ul>
     <li><a href="heatmap.html">Interactive Map</a> - Explore an interactive heat map displaying UFO sightings across Australia.</li> <!-- Trong's heatmap to go here-->
-    <li><a href="total_sightings_state_year.html">Total Sightings as a proportion of total state population</a> - View a line graph showcasing the trends and patterns of UFO sightings.</li>
-    <li><a href="shape_chart.html">UFO Shape by State Chart</a> - Discover the distribution of UFO shapes reported across Australia.</li>
-    <li><a href="TOD.html">Sightings by Time of Day</a> - Discover what time of day a sighting of a UFO predominantly occurs.</li>
+    <li><a href="total_sightings_state_year.html">Total sightings by state and year</a> - View a line graph showcasing the trends of UFO sightings across the years.</li>
+    <li><a href="shape_chart.html">UFO shape by state chart</a> - Discover the distribution of UFO shapes reported across Australia.</li>
+    <li><a href="TOD.html">Sightings by time of day</a> - Discover what time of day a sighting of a UFO predominantly occurs.</li>
   </ul>
   <hr> <!-- container for the Spaceship image -->
   <div class="container">
     <div class="content">
       <h2>Spaceship Animation</h2>
       <img id="spaceship" src="spaceship.png" alt="Spaceship">
-    </div> <!-- container for the time of day observation line chart image, Luz to put word cloud png name here at src -->
-    <div class="image">
-      <img src="wordcloud.png" alt="wordcloud">
+    </div> <!-- container for Luz's to put word cloud png name here at src -->
+    <div class="content">
+      <h2>Word Cloud</h2>
+      <img id="wordcloud" src="wordcloud.png" alt="Word Cloud">
     </div>
   </div>
 <!-- Spaceship animation using anime.js-->
@@ -67,8 +87,8 @@
   <script>
     window.addEventListener('DOMContentLoaded', (event) => {
       var spaceship = document.getElementById('spaceship');
-      var containerWidth = window.innerWidth - spaceship.clientWidth;
-      var containerHeight = window.innerHeight - spaceship.clientHeight;
+      var containerWidth = document.querySelector('.container').clientWidth - spaceship.clientWidth;
+      var containerHeight = document.querySelector('.container').clientHeight - spaceship.clientHeight;
 
       var animation = anime({
         targets: spaceship,
