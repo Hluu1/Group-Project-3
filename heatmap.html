@@ -16,10 +16,31 @@
       height: 100%;
       width: 100%;
     }
+
+    .toggle-wrapper {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: white;
+      padding: 10px;
+      border-radius: 4px;
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
   <div id="map"></div>
+
+  <div class="toggle-wrapper">
+    <div>
+      <input type="checkbox" id="toggleMarkers" checked>
+      <label for="toggleMarkers">Markers</label>
+    </div>
+    <div>
+      <input type="checkbox" id="toggleHeatmap" checked>
+      <label for="toggleHeatmap">Heatmap</label>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
@@ -70,6 +91,25 @@
         myMap.addLayer(markers);
         myMap.addLayer(heat);
       });
+
+    // Toggle markers and heatmap based on checkbox state
+    var toggleMarkers = document.getElementById('toggleMarkers');
+    var toggleHeatmap = document.getElementById('toggleHeatmap');
+    toggleMarkers.addEventListener('change', function() {
+      if (toggleMarkers.checked) {
+        myMap.addLayer(markers);
+      } else {
+        myMap.removeLayer(markers);
+      }
+    });
+
+    toggleHeatmap.addEventListener('change', function() {
+      if (toggleHeatmap.checked) {
+        myMap.addLayer(heat);
+      } else {
+        myMap.removeLayer(heat);
+      }
+    });
   </script>
 </body>
 </html>
