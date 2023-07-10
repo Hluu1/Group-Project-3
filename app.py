@@ -27,7 +27,7 @@ def heatmap():
     return render_template('shape_chart.html')
 
 #5. path to line chart time of day (TOD) sightings
-@app.route('/shape_chart')
+@app.route('/TOD')
 def heatmap():
     print("Server received request for 'TOD' page...")
     return render_template('TOD.html')
