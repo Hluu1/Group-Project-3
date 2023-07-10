@@ -27,7 +27,7 @@ You will need to have the following software and dependencies installed on your 
 
 # Data sources
 UFO Sightings | Kaggle
-Population | Australian Bureau of Statistics (abs.gov.au)
+
 
 ### Built With
 Python
