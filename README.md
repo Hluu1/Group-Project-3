@@ -52,11 +52,11 @@ https://developers.google.com/maps/documentation/javascript/heatmaplayer
 
 
 ## Authors
-Luz - https://github.com/
+Luz - https://github.com/Laos27
 
 Kirsty - https://github.com/kirsty185
 
 Trong - https://github.com/Hluu1
 
-Stephen - https://github.com/
+Stephen - https://github.com/stephenrobins
 
